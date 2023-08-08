@@ -20,10 +20,13 @@ def create_app():
     # def hello_pybo():
     #     return 'Hello, Pybo!'
 
-    from .views import main_views, classification_views, chat_views
+
     # main_views의 blueprint를 app에 등록, blueprint에 맞는 주소로 접근함
+    from .views import main_views, classification_views, chat_views, question_views, answer_views
     app.register_blueprint(main_views.bp) 
     app.register_blueprint(classification_views.bp)
     app.register_blueprint(chat_views.bp)
+    app.register_blueprint(question_views.bp)
+    app.register_blueprint(answer_views.bp)
 
     return app
